@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - praxe@localhost" uuid="319e9d02-959a-4071-b134-e80da42e91a3">
+    <database-info product="MySQL" version="5.5.5-10.1.19-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="praxe"/>
+    <table name="firmy" schema="" catalog="praxe" type="TABLE">
+      <column name="id_firma" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nazev_firmy" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ulice" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cp" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mesto" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="psc" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="kontaktni_osoba" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefon" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="poznamka" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="latitude" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="longitude" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="status" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12" remarks="Ik9LIiBpbmRpY2F0ZXMgdGhhdCBubyBlcnJvcnMgb2NjdXJyZWQ7IHRoZSBhZGRyZXNzIHdhcyBzdWNjZXNzZnVsbHkgcGFyc2VkIGFuZCBhdCBsZWFzdCBvbmUgZ2VvY29kZSB3YXMgcmV0dXJuZWQuCiJaRVJPX1JFU1VMVFMiIGluZGljYXRlcyB0aGF0IHRoZSBnZW9jb2RlIHdhcyBzdWNjZXNzZnVsIGJ1dCByZXR1cm5lZCBubyByZXN1bHRzLiBUaGlzIG1heSBvY2N1ciBpZiB0aGUgZ2VvY29kZXIgd2FzIHBhc3NlZCBhIG5vbi1leGlzdGVudCBhZGRyZXNzLgoiT1ZFUl9RVUVSWV9MSU1JVCIgaW5kaWNhdGVzIHRoYXQgeW91IGFyZSBvdmVyIHlvdXIgcXVvdGEuCiJSRVFVRVNUX0RFTklFRCIgaW5kaWNhdGVzIHRoYXQgeW91ciByZXF1ZXN0IHdhcyBkZW5pZWQuCiJJTlZBTElEX1JFUVVFU1QiIGdlbmVyYWxseSBpbmRpY2F0ZXMgdGhhdCB0aGUgcXVlcnkgKGFkZHJlc3MsIGNvbXBvbmVudHMgb3IgbGF0bG5nKSBpcyBtaXNzaW5nLgoiVU5LTk9XTl9FUlJPUiIgaW5kaWNhdGVzIHRoYXQgdGhlIHJlcXVlc3QgY291bGQgbm90IGJlIHByb2Nlc3NlZCBkdWUgdG8gYSBzZXJ2ZXIgZXJyb3IuIFRoZSByZXF1ZXN0IG1heSBzdWNjZWVkIGlmIHlvdSB0cnkgYWdhaW4uCg=="/>
+      <primary-key name="PRIMARY" columns="id_firma"/>
+      <exported-key name="fk_studenti_firma1" table="studenti" schema="" catalog="praxe" columns="firma_id"/>
+    </table>
+    <table name="kontrola" schema="" catalog="praxe" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_ucitele" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_studenti" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cas_vyberu" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="xIxhcywga2R5IHNpIHN0dWRlbnRhIHXEjWl0ZWwgemFtbHV2aWwu"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_Kontrola_ucitele1" columns="id_ucitele" ref-table="ucitele" ref-schema="" ref-catalog="praxe" ref-columns="id_ucitel" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_kontrola_studenti1" columns="id_studenti" ref-table="studenti" ref-schema="" ref-catalog="praxe" ref-columns="id_student" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_studenti_UNIQUE" unique="true" columns="id_studenti"/>
+      <index name="fk_kontrola_studenti1_idx" unique="false" columns="id_studenti"/>
+      <index name="fk_Kontrola_ucitele1_idx" unique="false" columns="id_ucitele"/>
+    </table>
+    <table name="studenti" schema="" catalog="praxe" type="TABLE">
+      <column name="id_student" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="trida_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="firma_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ucitel_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="VXLEjXVqZSwga2RvIHN0dWRlbnRhIGtvbnRyb2x1amU="/>
+      <column name="ucitel_admin_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="jmeno" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="prijmeni" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="poznamka" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id_student"/>
+      <foreign-key name="fk_student_trida" columns="trida_id" ref-table="tridy" ref-schema="" ref-catalog="praxe" ref-columns="id_trida" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_studenti_firma1" columns="firma_id" ref-table="firmy" ref-schema="" ref-catalog="praxe" ref-columns="id_firma" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_studenti_ucitele1" columns="ucitel_id" ref-table="ucitele" ref-schema="" ref-catalog="praxe" ref-columns="id_ucitel" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_kontrola_studenti1" table="kontrola" schema="" catalog="praxe" columns="id_studenti"/>
+      <index name="fk_student_trida_idx" unique="false" columns="trida_id"/>
+      <index name="fk_studenti_firma1_idx" unique="false" columns="firma_id"/>
+      <index name="fk_studenti_ucitele1_idx" unique="false" columns="ucitel_id"/>
+    </table>
+    <table name="tridy" schema="" catalog="praxe" type="TABLE">
+      <column name="id_trida" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="trida" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_trida"/>
+      <exported-key name="fk_student_trida" table="studenti" schema="" catalog="praxe" columns="trida_id"/>
+    </table>
+    <table name="ucitele" schema="" catalog="praxe" type="TABLE">
+      <column name="id_ucitel" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="jmeno" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="prijmeni" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heslo" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_ucitel"/>
+      <exported-key name="fk_Kontrola_ucitele1" table="kontrola" schema="" catalog="praxe" columns="id_ucitele"/>
+      <exported-key name="fk_studenti_ucitele1" table="studenti" schema="" catalog="praxe" columns="ucitel_id"/>
+      <index name="username_UNIQUE" unique="true" columns="username"/>
+    </table>
+  </data-source>
+</component>
