@@ -21,6 +21,11 @@ $html = '
 
 include("../mpdf/mpdf.php");
 
+$id_studenta = $_GET['id_studenta'];
+$login_id = $_GET['login_id'];
+
+
+
 $mpdf=new mPDF();
 
 $mpdf->debug = true;

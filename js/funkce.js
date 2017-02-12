@@ -98,7 +98,7 @@ function updateData(id_studenta) {
  */
 function exportStudentToPDF(id_studenta, login_id) {
     var iframe = document.createElement("iframe");
-    iframe.src = "pdf_student/create_pdf.php";
+    iframe.src = "pdf_student/create_pdf.php?id_studenta=" + id_studenta + "&login_id=" + login_id;
     iframe.style.display = "none";
     document.body.appendChild(iframe);
 //    context.Response.AddHeader("Content-Disposition", "attachment;filename=NasSoubor.pdf");
