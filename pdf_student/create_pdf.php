@@ -25,15 +25,47 @@
 
 
 $html = '
-<h1>mPDF</h1>
-<h2>Basic Example Using CSS Styles</h2>
-<p class="breadcrumb">Chapter &raquo; Topic</p>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<p style="font-kerning: none">Nulla felis erat, imperdiet eu, ullamcorper non, nonummy quis, elit. Suspendisse potenti. Ut a eros at ligula vehicula pretium. Maecenas feugiat pede vel risus. Nulla et lectus. Fusce eleifend neque sit amet erat. Integer consectetuer nulla non orci. Morbi feugiat pulvinar dolor. Cras odio. Donec mattis, nisi id euismod auctor, neque metus pellentesque risus, at eleifend lacus sapien et risus. Phasellus metus. Phasellus feugiat, lectus ac aliquam molestie, leo lacus tincidunt turpis, vel aliquam quam odio et sapien. Mauris ante pede, auctor ac, suscipit quis, malesuada sed, nulla. Integer sit amet odio sit amet lectus luctus euismod. Donec et nulla. Sed quis orci. </p>
-<h4>Heading using Small-Caps</h4>
-<p>Proin aliquet lorem id felis. Curabitur vel libero at mauris nonummy tincidunt. Donec imperdiet. Vestibulum sem sem, lacinia vel, molestie et, laoreet eget, urna. Curabitur viverra faucibus pede. Morbi lobortis. Donec dapibus. Donec tempus. Ut arcu enim, rhoncus ac, venenatis eu, porttitor mollis, dui. Sed vitae risus. In elementum sem placerat dui. Nam tristique eros in nisl. Nulla cursus sapien non quam porta porttitor. Quisque dictum ipsum ornare tortor. Fusce ornare tempus enim. </p>
+    <div id="hlavicka">
+
+        <div id="logo">
+            <img src="image1.png">
+        </div>
+        <div id="nazev">
+            <h1>Střední průmyslová škola dopravní, Plzeň, Karlovarská 99</h1>
+            <h2>Zápis z kontroly souvislé 14denní praxe žáků</h2>
+            <h2>konané ve dnech ____ – ___. __. _______</h2>
+        </div>
+    </div>
+
+    <div id="box">
+        <table>
+
+                <tr>
+                    <td><p>Jméno a příjmení kontrolujícího:</p></td>
+                    <td><p>' .  $udaje_ucitele['jmeno'] . ' ' . $udaje_ucitele['prijmeni'] . '</p></td>
+                </tr>
+                <tr>
+                    <td><p>Kontrola provedena dne:</p></td>
+                    <td><p></p></td>
+                </tr>
+                <tr>
+                    <td><p>Název a adresa firmy:</p></td>
+                    <td><p>' . $udaje_studenta['nazev_firmy'] . '<br />' . $udaje_studenta['ulice'] . ' ' . $udaje_studenta['cp'] . '<br />' .
+                            $udaje_studenta['mesto'] . ' ' . $udaje_studenta['psc'] . '</p></td>
+                </tr>
+
+
+
+
+
+
+
+
+        </table>
+    </div>
+
+
+
 ';
 
 
@@ -49,15 +81,17 @@ include("../mpdf/mpdf.php");
 
 $mpdf=new mPDF();
 
-$mpdf->debug = true;
+$stylesheet = file_get_contents('../css/pdf_style.css'); // external css
 
 $mpdf->SetDisplayMode('fullpage');
 
 // LOAD a stylesheet
-$stylesheet = file_get_contents('../css/mpdfstyleA4.css');
+
+
+
 $mpdf->WriteHTML($stylesheet,1);	// The parameter 1 tells that this is css/style only and no body/html/text
 
-$mpdf->WriteHTML($html);
+$mpdf->WriteHTML($html,2);
 
 $mpdf->Output('NasSoubor.pdf','D');
 

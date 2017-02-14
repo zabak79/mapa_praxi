@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/login.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logout.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/moji_studenti/moji_studenti_server.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pdf_student/create_pdf.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/profile.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/session.php" charset="UTF-8" />
   </component>
