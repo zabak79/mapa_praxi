@@ -28,7 +28,7 @@ $html = '
     <div id="hlavicka">
 
         <div id="logo">
-            <img src="image1.png">
+            <img src="logo.png">
         </div>
         <div id="nazev">
             <h1>Střední průmyslová škola dopravní, Plzeň, Karlovarská 99</h1>
