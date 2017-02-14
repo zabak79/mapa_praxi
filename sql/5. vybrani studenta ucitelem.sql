@@ -1,9 +1,0 @@
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '6', '1', '2017-01-16 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '1', '16', '2017-01-14 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '3', '5', '2017-01-13 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '3', '6', '2017-01-16 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '6', '10', '2017-01-14 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '6', '11', '2017-01-13 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '2', '15', '2017-01-13 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '2', '17', '2017-01-16 14:18:00');
-INSERT INTO `kontrola` (`id`, `id_ucitele`, `id_studenti`, `cas_vyberu`) VALUES (NULL, '6', '18', '2017-01-15 14:18:00');

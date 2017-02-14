@@ -8,7 +8,7 @@ Styl je pouzit pro vytvoreni PDF souboru pro tisk kontrolniho listu studentu
     font-weight: normal;
     font-family: sans-serif;
     margin-top: 18px;
-    margin-bottom: 6px;
+    margin-bottom: 20px;
     border-top: 0.075cm solid #000000;
     border-bottom: 0.075cm solid #000000;
 }
@@ -19,14 +19,13 @@ Styl je pouzit pro vytvoreni PDF souboru pro tisk kontrolniho listu studentu
     width:20%;
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
 
 #nazev {
     float:right;
+    font-family: sans-serif;
 //    border:1px solid black;
     width: 79%;
-
 }
 
 
@@ -45,38 +44,45 @@ h2  {
     font-size: 14px;
 }
 
-h3 {
-    font-size: 12px;
-    text-align: right;
-}
-
 p {
     font-family: sans-serif;
     font-size: 14px;
+    line-height: 35px;
 }
 
-table {
-    border-collapse: collapse;
-    align-self: center;
-}
-
-table, td {
-    border: 1px solid black;
-    width: 71%;
-}
-
-#box{
+.udaje {
     font-family: sans-serif;
-    margin-top: 18px;
-    margin-bottom: 6px;
-
+    border-collapse: collapse;
+    border: 1px solid black;
+    align-self: center;
+    width: 100%;
+}
+.udaje td {
+    padding: 5px;
 }
 
 
+.podpis {
+    align-self: center;
+    font-family: sans-serif;
+    width: 100%;
+    padding-top: 20px;
+}
 
+.podpis td {
+    text-align: center;
+    width: 50%;
+}
 
+.razitko {
+    align-self: center;
+    font-family: sans-serif;
+    width: 100%;
+    padding-top: 40px;
+}
 
-.xxx {
-    width: 100%;  text-align: center; background: red; }
-
+.razitko td {
+    text-align: center;
+    width: 50%;
+}
 
