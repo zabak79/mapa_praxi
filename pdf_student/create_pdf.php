@@ -46,7 +46,7 @@ $html = '
     <table class="udaje">
         <tr>
             <td>Jméno a příjmení kontrolujícího:</td>
-            <td>'. $udaje_ucitele['titul'] .  $udaje_ucitele['jmeno'] . ' ' . $udaje_ucitele['prijmeni'] . '</td>
+            <td>'. $udaje_ucitele['titul'] . ' ' . $udaje_ucitele['jmeno'] . ' ' . $udaje_ucitele['prijmeni'] . '</td>
         </tr>
             <tr>
             <td>Kontrola provedena dne:</td>
@@ -66,7 +66,7 @@ $html = '
         </tr>
         <tr>
             <td>Třída: ' . $udaje_trida['trida'] . '</td>
-            <td>Třídní učitel: '. $udaje_trida['titul'] . $udaje_trida['jmeno'] . ' ' . $udaje_trida['prijmeni'] .'</td>
+            <td>Třídní učitel: '. $udaje_trida['titul'] . ' ' . $udaje_trida['jmeno'] . ' ' . $udaje_trida['prijmeni'] .'</td>
         </tr>
         <tr>
             <td colspan="2">Obor vzdělání: ' . $udaje_studenta['nazev_oboru'] . '</td>

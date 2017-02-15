@@ -41,6 +41,8 @@ function odhlasitStudenta(id_studenta, login_id) {
  * @param login_id - prichasovaci ID ucitele
  */
 function viewVyberStudentu(login_id) {
+    // Smazani pole pro hledani studenta $('input[type=text]').val('');
+    $('#search_vyber').val('');
     $.ajax({
         type: "GET",
         url: "vyber_studentu/vyber_studentu_server.php?login_id=" + login_id ,
@@ -59,6 +61,8 @@ function viewVyberStudentu(login_id) {
  * @param login_id - prichasovaci ID ucitele*
  */
 function zapsatStudenta(id_studenta, login_id) {
+    // Smazani pole pro hledani studenta $('input[type=text]').val('');
+    $('#search_vyber').val('');
     $.ajax({
         type: "GET",
         url: "vyber_studentu/vyber_studentu_server.php?id_studenta=" + id_studenta + "&p=add",
@@ -103,6 +107,46 @@ function exportStudentToPDF(id_studenta, login_id) {
     document.body.appendChild(iframe);
 //    context.Response.AddHeader("Content-Disposition", "attachment;filename=NasSoubor.pdf");
 }
+
+/**
+ * Zobrazi studenty, ktere spravce praxi muze upravovat
+ *
+ * pouzita na karte Zapis studentu
+ * @param login_id - prichasovaci ID ucitele
+ */
+function viewSpravaStudentu(login_id) {
+    // Smazani pole pro hledani studenta $('input[type=text]').val('');
+    $('#search_sprava').val('');
+    $.ajax({
+        type: "GET",
+        url: "sprava_studentu/sprava_studentu_server.php?login_id=" + login_id ,
+        success: function (data) {
+            $('tbody').html(data);
+        }
+    });
+}
+
+/**
+ * Zajisti aktualizaci dat u studenta
+ *
+ * * pouzita na karte Zapis studentu
+ * @param id_studenta - ID studenta, kteremu budou editovany udaje v databazi (Jmeno, Prijmeni, Poznamka)
+ */
+function spravaStudentu(id_studenta) {
+    var jmeno = $('#jm-'+id_studenta).val();
+    var prijmeni = $('#pr-'+id_studenta).val();
+    var poznamka = $('#poz-'+id_studenta).val();
+    $.ajax({
+        type: "POST",
+        url: "sprava_studentu/sprava_studentu_server.php?p=edit",
+        data: "jm=" + jmeno + "&pr=" + prijmeni + "&poz=" + poznamka + "&id=" + id_studenta,
+        success: function(data){
+            viewVyberStudentu();
+        }
+    });
+}
+
+
 
 
 

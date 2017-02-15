@@ -36,7 +36,7 @@
                 <td>
                     <button onclick="odhlasitStudenta(<?php echo $student['id_student'] ?>, <?php echo $login_id ?>)" class="btn btn-sm btn-danger" title="Po kliknutí provede odstranění studenta ze seznamu vybravých studentů."><span class="glyphicon glyphicon-trash"></span></button>
 
-                    <button onclick="exportStudentToPDF(<?php echo $student['id_student']?>, <?php echo $login_id ?>)" class="btn btn-sm btn-info"> <span class="glyphicon glyphicon-save-file"></span></button>
+                    <button onclick="exportStudentToPDF(<?php echo $student['id_student']?>, <?php echo $login_id ?>)" class="btn btn-sm btn-info" title="Po kliknutí se provede vygenerování předvyplněného protokopu pro kontrolu praxí. Tato akce může chviličku trvat."> <span class="glyphicon glyphicon-save-file"></span></button>
     <?php
         }
     }

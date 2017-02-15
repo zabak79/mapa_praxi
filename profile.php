@@ -30,9 +30,11 @@ include('session.php');
         <div class="container">
             <ul class="nav nav-pills">
                 <li class="active"><a data-toggle="pill" href="#home">Home</a></li> <?php //TODO: Vratit zpet class="active" ?>
-                <li ><a data-toggle="pill" href="#menu1" onclick="viewVyberStudentu(<?php echo $login_id ?>)">Výběr studentů</a></li>
+                <li><a data-toggle="pill" href="#menu1" onclick="viewSpravaStudentu(<?php echo $login_id ?>)">Správa studentů</a></li>
                 <li><a data-toggle="pill" href="#menu2" onclick="viewMojiStudenti(<?php echo $login_id ?>)">Moji studenti</a></li>
-                <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+                <li><a data-toggle="pill" href="#menu3" onclick="viewVyberStudentu(<?php echo $login_id ?>)">Výběr studentů</a></li>
+
+
             </ul>
 
             <div class="tab-content">
@@ -42,9 +44,9 @@ include('session.php');
                         <?php include("home.php");?>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                    <h3>Výběr studentů</h3>
+                    <h3>Správa studentů</h3>
                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <?php include("vyber_studentu/vyber_studentu.html");?>
+                        <?php include("sprava_studentu/sprava_studentu.html");?>
                 </div>
                 <div id="menu2" class="tab-pane fade">
                     <h3>Moji studenti</h3>
@@ -52,8 +54,9 @@ include('session.php');
                         <?php include("moji_studenti/moji_studenti.html");?>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                    <h3>Menu 3</h3>
+                    <h3>Výběr studentů a firem</h3>
                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <?php include("vyber_studentu/vyber_studentu.html");?>
                 </div>
             </div>
         </div>

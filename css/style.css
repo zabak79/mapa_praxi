@@ -1,6 +1,10 @@
 /*----------------------------------------------
 CSS Settings For HTML Div ExactCenter
 ------------------------------------------------*/
+body {
+    font-family: sans-serif;
+}
+
 
 #main {
     width:90%;
@@ -14,8 +18,8 @@ CSS Settings For HTML Div ExactCenter
     border:2px solid #ccc;
 }
 #login label {
-        float:left;
-        padding-top: 20px;
+    float:left;
+    padding-top: 20px;
 }
 #login h1 {
     font-size: 40px;
@@ -35,16 +39,15 @@ hr {
     margin:10px -40px;
     margin-bottom:30px
 }
-input[type=text],input[type=password] {
+#login input[type=text],input[type=password] {
     width:95%;
     padding:10px;
     margin-top:8px;
     border:1px solid #ccc;
-    padding-left:5px;
     font-size:16px;
     margin-bottom:15px
 }
-input[type=submit] {
+#login input[type=submit] {
     width:100%;
     background-color:#FFBC00;
     color:#fff;
@@ -62,6 +65,25 @@ input[type=submit] {
     background-color:#DCE6F7
 }
 
+#search_vyber {
+    width:20%;
+    padding: 5px 10px 5px 10px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+    margin-bottom:15px;
+    height:40px;
+}
+
+#search_sprava {
+    width:20%;
+    padding: 5px 10px 5px 10px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+    margin-bottom:15px;
+    height:40px;
+}
 
 .button {
     background-color: firebrick;
@@ -82,3 +104,5 @@ input[type=submit] {
     padding:5px;
     border:dashed 1px gray
 }
+
+
